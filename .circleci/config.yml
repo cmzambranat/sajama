@@ -1,0 +1,46 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     - run:
+           name: Build Base Container
+           command: |
+            ./build.sh
+           no_output_timeout: 60m
+ build-and-deploy:
+   machine: true
+   steps:
+     - checkout
+     - run:
+           name: Build Base Container
+           command: |
+             docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
+             ./build-and-push.sh
+           no_output_timeout: 60m
+workflows:
+   version: 2
+   commit:
+     jobs:
+       - build:
+           filters:
+             branches:
+               ignore:
+                 - master       
+       - build-and-deploy:
+           filters:
+             branches:
+               only:
+                 - master
+                 
+   weekly:
+     triggers:
+       - schedule:
+           cron: "0 10 * * 0"
+           filters:
+             branches:
+               only:
+                 - master
+     jobs:
+       - build-and-deploy

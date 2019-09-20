@@ -1,0 +1,81 @@
+FROM ecohealthalliance/reservoir:inla
+MAINTAINER "Carlos Zambrana-Torrelio" cmzambranat@gmail.com
+
+## Install R packages that need compilation
+RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
+  && install2.r --error --skipinstalled -n `nproc` \
+  bibtex \
+  brms \
+  fasterize \
+  fst \
+  hexbin \
+  jqr \
+  officer \
+  prioritizr \
+  profmem \
+  profvis \
+  RcppArmadillo \
+  RcppGSL \
+  RcppZiggurat \
+  reticulate \
+  Rglpk \
+  RJSONIO \
+  rvg \
+  slam \
+  vegan \
+  xgboost \
+  zip \
+  && rm /usr/local/lib/R/etc/Makevars.site \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds /root/tmp/downloaded_packages
+
+## Install the rest of the R packages
+RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
+  && install2.r --error --skipinstalled -n `nproc` \
+     assertr \
+     aws.s3 \
+     aws.signature \
+     bayesplot \
+     caret \
+     cowplot \
+     doMC \
+     doParallel \
+     here \
+     keras \
+     knitcitations \
+     loo \
+     optimx \
+     plotly \
+     rasterVis \
+     piggyback \
+     rgrass7 \
+     ROI \
+     prioritizr \
+     betapart \
+     ROI.plugin.glpk \
+     mapmisc \
+     diseasemapping \
+     epimdr \
+     cshapes \
+     letsR \
+     adehabitatHR \
+     pbapply \
+     taxize \
+     stars \
+     rts \
+     ggforce \
+     landscapemetrics \
+     getlandsat \
+     restez \
+     rmd \
+     rosr \
+     projects \
+     linl \
+     binb \
+     pinp \
+    
+  && rm /usr/local/lib/R/etc/Makevars.site \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds /root/tmp/downloaded_packages
+
+## Install GitHub R Packages
+RUN installGithub.r \
+    s-u/unixtools
