@@ -1,4 +1,4 @@
-FROM ecohealthalliance/reservoir:apt
+FROM cmzambranat/sajama:apt
 MAINTAINER "Carlos Zambrana-Torrelio" cmzambranat@gmail.com
 
 ## Install R packages that need compilation

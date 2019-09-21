@@ -1,4 +1,4 @@
-FROM ecohealthalliance/reservoir:rcppeigen
+FROM cmzambranat/sajama:rcppeigen
 MAINTAINER "Carlos Zambrana-Torrelio" cmzambranat@gmail.com
 
 ## Install R packages that need compilation

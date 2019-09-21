@@ -1,4 +1,4 @@
-FROM ecohealthalliance/reservoir:rpkg
+FROM cmzambranat/sajama:rpkg
 MAINTAINER "Carlos Zambrana-Torrelio" cmzambranat@gmail.com
 
 ## Install stuff

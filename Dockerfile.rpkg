@@ -1,4 +1,4 @@
-FROM ecohealthalliance/reservoir:inla
+FROM cmzambranat/sajama:inla
 MAINTAINER "Carlos Zambrana-Torrelio" cmzambranat@gmail.com
 
 ## Install R packages that need compilation
