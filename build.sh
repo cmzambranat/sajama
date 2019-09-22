@@ -3,8 +3,8 @@
 set -e 
 set -x
 
-for tag in apt rcppeigen rstan inla rpkg server gpu
+for tag in apt rcppeigen inla rpkg server
 do
-  image=cmzambranat/sajama:$tag
+  image=	:$tag
   docker build -q -f Dockerfile.$tag --cache-from $image -t $image .
 done
