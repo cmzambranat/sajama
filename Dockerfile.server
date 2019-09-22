@@ -14,7 +14,6 @@ RUN chmod +x /motd.sh; sync; ./motd.sh > /etc/motd; rm motd.sh \
   && mv -f rsession.conf /etc/rstudio/rsession.conf \
   && mv -f rserver.conf /etc/rstudio/rserver.conf \
   && mv -f rstudio-login.html /etc/rstudio/login.html \
-  && mv -f shiny-server.conf /etc/shiny-server/shiny-server.conf \
   && mv -f Rprofile.site /usr/local/lib/R/etc/Rprofile.site \
   && mv -f Renviron.site /usr/local/lib/R/etc/Renviron.site \
   && mv -f Makevars.site /usr/local/lib/R/etc/Makevars.site \
