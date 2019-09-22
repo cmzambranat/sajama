@@ -65,7 +65,6 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      ggforce \
      landscapemetrics \
      getlandsat \
-     restez \
      rmd \
      rosr \
      projects \
