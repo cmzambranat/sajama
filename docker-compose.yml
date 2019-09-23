@@ -1,0 +1,50 @@
+
+version: '2'
+
+services:
+#  caddy:
+#    image: joshix/caddy
+#    links:
+#      - rstudio
+#      - netdata
+#    volumes:
+#      - "./site/:/var/www/html"
+#      - "./.caddy/:/.caddy"
+#    ports:
+#      - "22051:22051"
+#    restart: always
+#    hostname: aegypti-caddy
+#    cpu_shares: 64
+
+  rstudio:
+    image: "cmzambranat/sajama:server"
+    environment:
+      - PASSWORD=eh@rstudi0
+      - ROOT=true
+      #- USER=cmzambranat
+      #- DOCKER_HOST=tcp://docker-socket-proxy:2375
+    ports:
+      #- "22022:22"
+      - "8787:8787"
+      #- "60990-61000:60990-61000/udp"
+    volumes:
+      - "/Users/uyuni/repos:/home/rstudio/repos"
+      - "/Users/uyuni/drop_mio/crypto/aplicaciones:/home/rstudio/aplicaciones"
+    restart: always
+    hostname: sajama
+    
+    
+  
+
+#  netdata:
+#    image: titpetric/netdata  
+#    cap_add:
+#      - SYS_PTRACE
+#    volumes:
+#      - "/proc:/host/proc:ro"
+#      - "/sys:/host/sys:ro"
+#      - "./netdata/netdata.conf:/etc/netdata/netdata.conf"
+#      - "./netdata/health_alarm_notify.conf:/etc/netdata/health_alarm_notify.conf"
+#    restart: always
+#    hostname: aegypti-status
+#    cpu_shares: 64
