@@ -18,13 +18,7 @@ RUN chmod +x /motd.sh; sync; ./motd.sh > /etc/motd; rm motd.sh \
   && mv -f Renviron.site /usr/local/lib/R/etc/Renviron.site \
   && mv -f Makevars.site /usr/local/lib/R/etc/Makevars.site \
   && mv -f bash_settings.sh /etc/bash.bashrc \
-  && mv -f userconf.sh /etc/cont-init.d/conf \
-
-# Limit mosh's server ports to 60990:61000
-RUN mv /usr/bin/mosh-server /usr/bin/mosh-server-original \
-  && echo '#!/bin/bash' > /usr/bin/mosh-server \
-  && echo '/usr/bin/mosh-server-original new -p 60990:61000 $@' >> /usr/bin/mosh-server \
-  && chmod +x /usr/bin/mosh-server
+  && mv -f userconf.sh /etc/cont-init.d/conf
 
 # Get Docker itself
 RUN curl -sSL https://get.docker.com/ | sh
