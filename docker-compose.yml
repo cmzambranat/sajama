@@ -16,7 +16,7 @@ services:
 #    hostname: aegypti-caddy
 #    cpu_shares: 64
 
-  rstudio:
+  rstudio:  
     image: "cmzambranat/sajama:server"
     environment:
       - PASSWORD=eh@rstudi0
