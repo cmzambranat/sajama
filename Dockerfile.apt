@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   libsodium-dev \
   libtesseract-dev \
   lsb-release \
+  libncursesw5 \
   man \
   mosh \
   nano \
