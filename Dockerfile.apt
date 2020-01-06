@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   git-core \
   gnupg2 \
   gnupg \
-  golang-1.8 \
   golang-go \
   graphviz \
   grass \
