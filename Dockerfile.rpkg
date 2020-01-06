@@ -56,7 +56,6 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      diseasemapping \
      epimdr \
      cshapes \
-     letsR \
      adehabitatHR \
      pbapply \
      taxize \
@@ -66,7 +65,6 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      landscapemetrics \
      getlandsat \
      rmd \
-     rosr \
      projects \
      linl \
      binb \
@@ -74,7 +72,9 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      tidync \
      RNCEP \
   && installGithub.r rmetaverse/metaverse \
+  && installGithub.r macroecology/letsR \
   && installGithub.r ilyamaclean/microclima \
+  && installGithub.r pzhaonet/rosr \
   && rm /usr/local/lib/R/etc/Makevars.site \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds /root/tmp/downloaded_packages
 
