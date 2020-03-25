@@ -21,7 +21,6 @@ RUN install2.r --error --skipinstalled \
   RJSONIO \
   rvg \
   slam \
-  tidymodels \
   vegan \
   xgboost \
   zip \
@@ -70,6 +69,7 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      pinp \
      tidync \
      RNCEP \
+     tidymodels \
   && installGithub.r rmetaverse/metaverse \
   && installGithub.r macroecology/letsR \
   && installGithub.r ilyamaclean/microclima \
