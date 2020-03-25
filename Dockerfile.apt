@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   htop \
   jags \
   libclang-dev \
+  libncursesw5 \
   libglpk-dev \
   libgoogle-perftools-dev \
   libleptonica-dev \
@@ -31,10 +32,10 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   libpoppler-cpp-dev \
   libprotobuf-dev \
   libprotoc-dev \
+  libsecret-1-dev \
   libsodium-dev \
   libtesseract-dev \
   lsb-release \
-  libncursesw5 \
   man \
   mosh \
   nano \
@@ -45,10 +46,13 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   python-pip \
   python-setuptools \
   ruby-full \
+  rsync \
   silversearcher-ag \
   software-properties-common \
   tesseract-ocr-eng \
   tmux \
+  tree \
+  whois \
   xclip \
   zsh \
   && apt-get clean \
@@ -60,10 +64,7 @@ RUN curl -sL https://gist.githubusercontent.com/zyedidia/d4acfcc6acf2d0d75e79004
 ## nnn
 RUN wget https://github.com/jarun/nnn/releases/download/v2.7/nnn_2.7-1_debian9.amd64.deb \
   && dpkg -i nnn_2.7-1_debian9.amd64.deb \
-  && rm nnn_2.7-1_debian9.amd64.deb
-
-# Allow future R script installs to use the parallel version of install in littler
-RUN installGithub.r eddelbuettel/littler \
-  && ln -sf /usr/local/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r \
-  && ln -sf /usr/local/lib/R/site-library/littler/examples/installGithub.r /usr/local/bin/installGithub.r \
-  && ln -sf /usr/local/lib/R/site-library/littler/bin/r /usr/local/bin/r
+  && rm nnn_2.7-1_debian9.amd64.deb \
+  && wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb \
+  && sudo dpkg -i bat_0.12.1_amd64.deb \
+  && rm bat_0.12.1_amd64.deb 
