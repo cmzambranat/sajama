@@ -69,7 +69,7 @@ RUN echo "MAKEFLAGS=-j$(nproc)"  >> /usr/local/lib/R/etc/Makevars.site \
      pinp \
      tidync \
      RNCEP \
-     tidymodels \
+     leafpop \
   && installGithub.r rmetaverse/metaverse \
   && installGithub.r macroecology/letsR \
   && installGithub.r ilyamaclean/microclima \
