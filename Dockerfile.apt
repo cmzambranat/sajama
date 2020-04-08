@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   libprotoc-dev \
   libsecret-1-dev \
   libsodium-dev \
+  libssl-dev \
   libtesseract-dev \
   lsb-release \
   man \
